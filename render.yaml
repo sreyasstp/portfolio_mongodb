@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: sreyas-portfolio
+    env: node
+    region: oregon
+    plan: free
+    rootDir: frontend
+    buildCommand: npm install && npm run build
+    startCommand: npm run start
+    envVars:
+      - key: MONGODB_URI
+        value: mongodb+srv://code416:code416@code416.yzuornt.mongodb.net/?retryWrites=true&w=majority
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_APP_URL
+        sync: false
